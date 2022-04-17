@@ -1,12 +1,25 @@
 package com.miguel.frozenlist.frozenlistvone.dtos
 
+import lombok.AllArgsConstructor
+import lombok.EqualsAndHashCode
+import lombok.Getter
+import lombok.NoArgsConstructor
+import lombok.Setter
+import lombok.ToString
 import java.io.Serializable
-
-data class AddressDto(
-    val street: String? = null,
-    val streetNumber: String? = null,
-    val postcode: String? = null,
-    val City: String? = null,
-    val floor: String? = null,
+@Getter
+@Setter
+@ToString
+@NoArgsConstructor
+@AllArgsConstructor
+@EqualsAndHashCode
+class AddressDto : Serializable {
+    var street: String? = null
+    var streetNumber: String? = null
+    var postcode: String? = null
+    var city: String? = null
+    var floor: String? = null
     val userGroupEntity: MutableList<UserGroupDto> = mutableListOf()
-) : Serializable
+    var isValid: Boolean = false
+}
+

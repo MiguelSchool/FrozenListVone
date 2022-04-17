@@ -1,13 +1,23 @@
 package com.miguel.frozenlist.frozenlistvone.models.entities
 
+import lombok.Getter
+import lombok.NoArgsConstructor
+import lombok.Setter
 import javax.persistence.*
 
 @Entity
-class StorageTypeEntity(@Column(nullable = false)var name: String) {
+@Getter
+@Setter
+@NoArgsConstructor
+@Table(name = "StorageTypes")
+class StorageTypeEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(nullable = false)
-    private var id: Long? = null
+    var id: Long? = null
+
+    @Column(nullable = false)
+    var name: String? = null
 
     @OneToMany
     private lateinit var storageEntity: List<StorageEntity>

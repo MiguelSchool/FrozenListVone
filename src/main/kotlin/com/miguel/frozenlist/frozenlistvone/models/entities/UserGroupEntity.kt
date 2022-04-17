@@ -1,20 +1,23 @@
 package com.miguel.frozenlist.frozenlistvone.models.entities
 
 import lombok.Getter
+import lombok.NoArgsConstructor
 import lombok.Setter
 import lombok.ToString
 import javax.persistence.*
 
 @Entity
-@ToString
+@NoArgsConstructor
 @Getter
 @Setter
-class UserGroupEntity(
-    @Id var id: Long,
-    @Column(nullable = false) var name : String) {
+@Table(name = "UserGroups")
+class UserGroupEntity {
 
-    @ManyToOne
-    private lateinit var address: AddressEntity
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    var id: Long? = null
+    @Column(nullable = false, unique = true)
+    var name : String? = null
 
     @OneToMany
     private lateinit var storageEntity: List<StorageEntity>
@@ -28,23 +31,9 @@ class UserGroupEntity(
     @OneToMany
     private lateinit var shoppingListEntities: List<ShoppingListEntity>
 
-    override fun equals(other: Any?): Boolean {
-        if (this === other) return true
-        if (javaClass != other?.javaClass) return false
+    @OneToMany
+    private lateinit var users: Set<UserEntity>
 
-        other as UserGroupEntity
-
-        if (id != other.id) return false
-        if (name != other.name) return false
-
-        return true
-    }
-
-    override fun hashCode(): Int {
-        var result = id.hashCode()
-        result = 31 * result + name.hashCode()
-        return result
-    }
-
-
+    @ManyToOne
+    public lateinit var address: AddressEntity
 }

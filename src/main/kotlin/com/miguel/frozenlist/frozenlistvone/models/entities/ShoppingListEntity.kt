@@ -1,19 +1,31 @@
 package com.miguel.frozenlist.frozenlistvone.models.entities
 
+import lombok.Getter
+import lombok.NoArgsConstructor
+import lombok.Setter
 import java.time.LocalDate
 import javax.persistence.*
 
 @Entity
-class ShoppingListEntity(
-    @Column(nullable = false) private var createdAt: LocalDate,
-    @Column( nullable = false) private var name: String,
-    @Column( nullable = false) private var closed: Boolean,
-    private var totalPrice: Double ) {
+@Getter
+@Setter
+@NoArgsConstructor
+@Table(name = "Shoppinglists")
+class ShoppingListEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(nullable = false)
-    private var id: Long? = null
+    var id: Long? = null
+
+    @Column(nullable = false)
+    private var createdAt: LocalDate? = null
+
+    @Column( nullable = false)
+    private var name: String? = null
+
+    @Column( nullable = false) private var finish: Boolean? = null
+    private var totalPrice: Double? = null
 
     @ManyToMany
     private lateinit var productEntities : List<ProductEntity>

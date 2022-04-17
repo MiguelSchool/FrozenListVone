@@ -1,22 +1,37 @@
 package com.miguel.frozenlist.frozenlistvone.models.entities
 
+import lombok.Getter
+import lombok.NoArgsConstructor
+import lombok.Setter
 import javax.persistence.*
 
 @Entity
-class AddressEntity(
-    var street : String,
-    var streetNumber : String,
-    var postcode : String,
-    @Column(nullable = false) var City : String,
-    @Column(nullable = false) var floor : String
-) {
+@Getter
+@Setter
+@NoArgsConstructor
+@Table(name = "Addresses")
+class AddressEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(nullable = false)
-    private var id: Long? = null
+    var id: Long? = null
+
+    @Column(name = "street")
+    var street : String? = null
+
+    @Column(name = "street_number")
+    var streetNumber : String? = null
+
+    @Column(name = "postcode")
+    var postcode : String? = null
+
+    @Column(nullable = false)
+    var city : String? = null
+
+    @Column(nullable = false)
+    var floor : String? = null
 
     @OneToMany
-
     private lateinit var userGroupEntity: List<UserGroupEntity>
 
 }

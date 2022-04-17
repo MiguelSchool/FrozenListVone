@@ -1,32 +1,46 @@
 package com.miguel.frozenlist.frozenlistvone.models.entities
 
-import lombok.EqualsAndHashCode
-import lombok.Getter
-import lombok.Setter
-import lombok.ToString
+import lombok.*
 import javax.persistence.*
 
 @Entity
-@ToString
-@EqualsAndHashCode
 @Getter
 @Setter
-class UserEntity(
-    @Id @GeneratedValue(strategy = GenerationType.AUTO) private var id:Long,
-    @Column(nullable = false) private var email : String,
-    @Column(nullable = false) private var password : String,
-    @Column(nullable = false) private var firstname : String,
-    @Column(nullable = false) private var lastname : String,
-    private var dayOfBirth : String?,
-    ) {
+@NoArgsConstructor
+@Table(name = "Users")
+class UserEntity{
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    var id: Long? = null
 
-    @ManyToOne
-    private lateinit var userGroupEntity: UserGroupEntity
+    @Column(nullable = false, unique = true)
+    private var email : String? = null
+
+    @Column(nullable = false)
+    private var password : String? = null
+
+    @Column(nullable = false)
+    private var firstname : String? = null
+
+    @Column(nullable = false)
+    private var lastname : String? = null
+
+    @Column
+    private var dayOfBirth : String? = null
 
     @OneToMany
     private lateinit var recipeEntity: List<RecipeEntity>
 
+    @OneToMany
+    private lateinit var recipeFavorites : List<RecipeEntity>
+
+    @OneToMany
+    private lateinit var ratings: List<RatingEntity>
+
     @ManyToOne
     private lateinit var userRoleEntity: UserRoleEntity
+
+    @ManyToOne
+    private lateinit var userGroupEntity: UserGroupEntity
 }

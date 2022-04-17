@@ -1,6 +1,15 @@
 package com.miguel.frozenlist.frozenlistvone.dtos
 
+import lombok.*
 import java.io.Serializable
 
-data class StorageTypeEntityDto(val name: String? = null, val storageEntity: MutableList<StorageDto> = mutableListOf()) :
-    Serializable
+@Getter
+@Setter
+@ToString
+@NoArgsConstructor
+@AllArgsConstructor
+@EqualsAndHashCode
+class StorageTypeEntityDto : Serializable {
+    val name: String? = null
+    val storageEntity: MutableList<StorageDto> = mutableListOf()
+}
