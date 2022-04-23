@@ -8,7 +8,7 @@ import java.util.*
 @Repository
 interface AddressEntityRepository : JpaRepository<AddressEntity, Long> {
 
-    fun createOrUpdate(entity: AddressEntity) : Pair<Boolean,AddressEntity> {
+    fun saveOrUpdate(entity: AddressEntity) : Pair<Boolean,AddressEntity> {
         val existing = if(entity.id != null) findById(entity.id!!) else Optional.ofNullable(null)
         val created: Boolean?
         val backEntity: AddressEntity = save(entity)

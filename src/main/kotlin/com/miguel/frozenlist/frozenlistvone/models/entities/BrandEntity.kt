@@ -18,7 +18,7 @@ class BrandEntity {
     var id: Long? = null
 
     @Column(nullable = false)
-    var name: String? = null
+    var brandName: String? = null
 
     @Column(nullable = false)
     var price: Double? = null

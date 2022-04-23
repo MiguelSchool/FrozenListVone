@@ -75,7 +75,7 @@ class UserGroupMapperFunctionTests {
         @JvmStatic
         fun getUserGroupMockEntitiesAsList() : List<UserGroupEntity> {
             val mock1 = UserGroupEntity()
-                mock1.name = "name"
+                mock1.userGroupName = "name"
             return listOf()
         }
 

@@ -3,7 +3,6 @@ package com.miguel.frozenlist.frozenlistvone.models.entities
 import lombok.Getter
 import lombok.NoArgsConstructor
 import lombok.Setter
-import lombok.ToString
 import javax.persistence.*
 
 @Entity
@@ -17,7 +16,7 @@ class UserGroupEntity {
     @GeneratedValue(strategy = GenerationType.AUTO)
     var id: Long? = null
     @Column(nullable = false, unique = true)
-    var name : String? = null
+    var userGroupName : String? = null
 
     @OneToMany
     private lateinit var storageEntity: List<StorageEntity>

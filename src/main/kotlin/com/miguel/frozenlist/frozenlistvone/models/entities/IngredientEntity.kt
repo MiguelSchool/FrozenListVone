@@ -18,13 +18,13 @@ class IngredientEntity {
     var id: Long? = null
 
     @Column(nullable = false)
-    private var name: String? = null
+    private var ingredientName: String? = null
 
     @Column(nullable = false)
     private var amount: Double? = null
 
     @Column(nullable = false)
-    private var group: String? = null
+    private var ingredientGroup: String? = null
 
     @ManyToMany
     private lateinit var recipeEntities: List<RecipeEntity>

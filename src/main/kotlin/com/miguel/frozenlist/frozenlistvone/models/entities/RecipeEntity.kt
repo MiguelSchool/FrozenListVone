@@ -23,7 +23,7 @@ class RecipeEntity {
     var duration : Double? = null
 
     @Column(nullable = false)
-    var name : String? = null
+    var recipeName : String? = null
 
     @Column(nullable = false)
     var cookedCount: Double? = null

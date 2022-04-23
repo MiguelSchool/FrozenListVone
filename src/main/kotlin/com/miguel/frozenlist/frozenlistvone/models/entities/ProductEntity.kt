@@ -3,7 +3,6 @@ package com.miguel.frozenlist.frozenlistvone.models.entities
 import lombok.Getter
 import lombok.NoArgsConstructor
 import lombok.Setter
-import lombok.ToString
 import java.time.LocalDate
 import javax.persistence.*
 
@@ -20,7 +19,7 @@ class ProductEntity {
     var id: Long? = null
 
     @Column(nullable = false)
-    private final val name: String? = null
+    private final val productName: String? = null
 
     @Column(nullable = false)
     private final val durabilityDays: Int? = null

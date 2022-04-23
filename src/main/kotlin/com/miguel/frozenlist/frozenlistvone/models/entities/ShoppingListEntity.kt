@@ -22,7 +22,7 @@ class ShoppingListEntity {
     private var createdAt: LocalDate? = null
 
     @Column( nullable = false)
-    private var name: String? = null
+    private var shoppingListName: String? = null
 
     @Column( nullable = false) private var finish: Boolean? = null
     private var totalPrice: Double? = null

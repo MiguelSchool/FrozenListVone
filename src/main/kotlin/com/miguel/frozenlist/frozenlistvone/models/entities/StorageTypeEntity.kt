@@ -17,7 +17,7 @@ class StorageTypeEntity {
     var id: Long? = null
 
     @Column(nullable = false)
-    var name: String? = null
+    var storageTypeName: String? = null
 
     @OneToMany
     private lateinit var storageEntity: List<StorageEntity>

@@ -19,7 +19,7 @@ class StorageEntity {
     var id: Long? = null
 
     @Column(nullable = false)
-    private var name : String? = null
+    private var storageName : String? = null
 
     @Column(nullable = true)
     private var description : String? = null
