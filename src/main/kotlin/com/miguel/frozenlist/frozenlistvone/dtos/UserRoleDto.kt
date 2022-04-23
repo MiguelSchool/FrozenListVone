@@ -11,7 +11,7 @@ import java.io.Serializable
 @AllArgsConstructor
 @EqualsAndHashCode
 class UserRoleDto : Serializable {
-    val role: UserRole? = null
     val id: Long? = null
+    val role: UserRole? = null
     var unlocked: Boolean = true
 }
