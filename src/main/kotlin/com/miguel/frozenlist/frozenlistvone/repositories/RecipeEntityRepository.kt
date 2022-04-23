@@ -6,12 +6,4 @@ import org.springframework.stereotype.Repository
 import java.util.*
 
 @Repository
-interface RecipeEntityRepository : JpaRepository<RecipeEntity, Long> {
-    fun saveOrUpdate(entity: RecipeEntity) : Pair<Boolean, RecipeEntity> {
-        val existing = if(entity.id != null) findById(entity.id!!) else Optional.ofNullable(null)
-        val created: Boolean?
-        val backEntity: RecipeEntity = save(entity)
-        created = !existing.isPresent
-        return created to backEntity
-    }
-}
+interface RecipeEntityRepository : JpaRepository<RecipeEntity, Long> {}

@@ -6,13 +6,4 @@ import org.springframework.stereotype.Repository
 import java.util.*
 
 @Repository
-interface StorageTypeEntityRepository : JpaRepository<StorageTypeEntity, Long> {
-
-    fun saveOrUpdate(entity: StorageTypeEntity) : Pair<Boolean, StorageTypeEntity> {
-        val existing = if(entity.id != null) findById(entity.id!!) else Optional.ofNullable(null)
-        val created: Boolean?
-        val backEntity: StorageTypeEntity = save(entity)
-        created = !existing.isPresent
-        return created to backEntity
-    }
-}
+interface StorageTypeEntityRepository : JpaRepository<StorageTypeEntity, Long> {}

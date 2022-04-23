@@ -92,7 +92,7 @@ class AddressMapperFunctionsTest {
                 mock4.street = "Graf-von-Wagnerstraße"
                 mock4.streetNumber = "100A"
                 mock4.city = "Schaafhausen"
-                mock4.postcode = "07645"
+                mock4.postcode = "0764"
             val mock5 = AddressEntity()
                 mock5.street = "Hans Georg Martin straße"
                 mock5.streetNumber = "123"

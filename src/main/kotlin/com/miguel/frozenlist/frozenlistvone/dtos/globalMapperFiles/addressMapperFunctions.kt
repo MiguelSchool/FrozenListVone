@@ -38,20 +38,22 @@ private val isValidAddress : (AddressDto) -> Boolean = { addressDto: AddressDto 
         addressDto.street != null && addressDto.street != "" &&
         addressDto.streetNumber != null && addressDto.streetNumber != "" &&
         addressDto.postcode != null && addressDto.postcode != "" &&
-        addressDto.city != null && addressDto.city != "" ){
+        addressDto.city != null && addressDto.city != "" ) {
 
-        val matcherPostCode : Matcher = postCodePatter.matcher(addressDto.postcode)
-        val matcherStreet : Matcher = streetPatter.matcher(addressDto.street)
-        val matcherStreetNumber : Matcher = streetNumberPatter.matcher(addressDto.streetNumber)
+        val matcherPostCode: Matcher = postCodePatter.matcher(addressDto.postcode)
+        val matcherStreet: Matcher = streetPatter.matcher(addressDto.street)
+        val matcherStreetNumber: Matcher = streetNumberPatter.matcher(addressDto.streetNumber)
 
-        areValidProperties = if(addressDto.floor != null && addressDto.floor != "") {
-            val floorMatcher : Matcher = floorRegexPatter.matcher(addressDto.floor)
-            floorMatcher.matches() && addressRegexPropertiesAudit( matcherPostCode,
-                matcherStreet,
-                matcherStreetNumber ) &&
-                    addressDto.postcode!!.length == 5 &&
-                    addressDto.floor!!.length < 4
-        }else {
+        areValidProperties = if( addressDto.floor != null && addressDto.floor != "") { //addressDto.floor != null && addressDto.floor != "" TODO: matcher
+//            val floorMatcher : Matcher = floorRegexPatter.matcher(addressDto.floor)
+//
+//            floorMatcher.matches() && addressRegexPropertiesAudit( matcherPostCode,
+//                matcherStreet,
+//                matcherStreetNumber ) &&
+//                    addressDto.postcode!!.length == 5 &&
+//                    addressDto.floor!!.length < 4
+            addressDto.floor == ""
+        } else {
             addressRegexPropertiesAudit(matcherPostCode, matcherStreet, matcherStreetNumber) &&
                     addressDto.postcode!!.length == 5 &&
                     addressDto.floor!!.length < 4

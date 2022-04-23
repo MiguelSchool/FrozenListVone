@@ -11,11 +11,11 @@ import java.io.Serializable
 @EqualsAndHashCode
 class RecipeDto : Serializable {
     val id: Long? = null
-    val isPrivateRecipe: Boolean? = null
-    val duration: Double? = null
-    val name: String? = null
-    val cookedCount: Double? = null
-    val category: String? = null
-    val description: String? = null
-    val image: String? = null
+    var isPrivateRecipe: Boolean? = null
+    var duration: Double? = null
+    var name: String? = null
+    var cookedCount: Int? = null
+    var category: String? = null
+    var description: String? = null
+    var image: String? = null
 }

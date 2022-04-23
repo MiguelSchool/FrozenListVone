@@ -6,12 +6,4 @@ import org.springframework.stereotype.Repository
 import java.util.*
 
 @Repository
-interface ShoppingListEntityRepository : JpaRepository<ShoppingListEntity, Long> {
-    fun saveOrUpdate(entity: ShoppingListEntity) : Pair<Boolean, ShoppingListEntity> {
-        val existing = if(entity.id != null) findById(entity.id!!) else Optional.ofNullable(null)
-        val created: Boolean?
-        val backEntity: ShoppingListEntity = save(entity)
-        created = !existing.isPresent
-        return created to backEntity
-    }
-}
+interface ShoppingListEntityRepository : JpaRepository<ShoppingListEntity, Long> {}
