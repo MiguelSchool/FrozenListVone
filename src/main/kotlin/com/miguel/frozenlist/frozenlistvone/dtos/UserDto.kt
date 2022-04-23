@@ -10,6 +10,7 @@ import java.io.Serializable
 @AllArgsConstructor
 @EqualsAndHashCode
 class UserDto: Serializable {
+    val id: Long? = null
     val email: String? = null
     val password: String? = null
     val firstname: String? = null

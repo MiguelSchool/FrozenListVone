@@ -19,24 +19,24 @@ class ProductEntity {
     var id: Long? = null
 
     @Column(nullable = false)
-    private final val productName: String? = null
+    val productName: String? = null
 
     @Column(nullable = false)
-    private final val durabilityDays: Int? = null
+    val durabilityDays: Int? = null
 
     @Column(nullable = false)
-    private final val boughtAt: LocalDate? = null
+    val boughtAt: LocalDate? = null
 
     @Column(nullable = false)
-    private final val image : String? = null
+    val image : String? = null
 
     @ManyToOne
     @JoinColumn(name = "storage_id", nullable = false, unique = true)
-    private lateinit var storageEntity: StorageEntity
+    lateinit var storageEntity: StorageEntity
 
     @ManyToOne
-    private lateinit var brandEntity: BrandEntity
+    lateinit var brandEntity: BrandEntity
 
     @ManyToMany
-    private lateinit var shoppingListEntities: List<ShoppingListEntity>
+    lateinit var shoppingListEntities: List<ShoppingListEntity>
 }

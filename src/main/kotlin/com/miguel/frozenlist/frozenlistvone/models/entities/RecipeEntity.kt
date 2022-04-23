@@ -41,20 +41,20 @@ class RecipeEntity {
     var difficultLvl: DifficultLevel? = null
 
     @ManyToOne
-    private lateinit var userEntity: UserEntity
+    lateinit var userEntity: UserEntity
 
     @ManyToOne
-    private lateinit var ratingEntity: RatingEntity
+    lateinit var ratingEntity: RatingEntity
 
     @ManyToOne
-    private lateinit var userGroupEntity: UserGroupEntity
+    lateinit var userGroupEntity: UserGroupEntity
 
     @ManyToOne
-    private lateinit var favoriteByUserGroupEntity: UserGroupEntity
+    lateinit var favoriteByUserGroupEntity: UserGroupEntity
 
     @ManyToOne
-    private lateinit var favoriteByUserEntity: UserEntity
+    lateinit var favoriteByUserEntity: UserEntity
 
     @ManyToMany
-    private lateinit var ingredientEntities: List<IngredientEntity>
+    lateinit var ingredientEntities: List<IngredientEntity>
 }

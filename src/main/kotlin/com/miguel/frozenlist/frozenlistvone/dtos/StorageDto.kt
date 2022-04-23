@@ -10,6 +10,7 @@ import java.io.Serializable
 @AllArgsConstructor
 @EqualsAndHashCode
 class StorageDto : Serializable {
+    val id: Long? = null
     val name: String? = null
     val description: String? = null
 }

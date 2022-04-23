@@ -10,6 +10,7 @@ import java.io.Serializable
 @AllArgsConstructor
 @EqualsAndHashCode
 class BrandDto : Serializable {
+    val id: Long? = null
     val name: String? = null
     val price: Double? = null
 }

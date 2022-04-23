@@ -19,12 +19,12 @@ class RatingEntity {
     var id: Long? = null
 
     @Column(nullable = false)
-    private var rating: Rating? = null
+    var rating: Rating? = null
 
     @OneToMany
-    private lateinit var recipeEntities:List<RecipeEntity>
+    lateinit var recipeEntities:List<RecipeEntity>
 
     @ManyToOne
-    private var userEntity: UserEntity? = null
+    var userEntity: UserEntity? = null
 
 }

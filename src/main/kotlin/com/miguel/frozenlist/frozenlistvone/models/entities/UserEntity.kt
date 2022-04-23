@@ -15,32 +15,32 @@ class UserEntity{
     var id: Long? = null
 
     @Column(nullable = false, unique = true)
-    private var email : String? = null
+     var email : String? = null
 
     @Column(nullable = false)
-    private var password : String? = null
+    var password : String? = null
 
     @Column(nullable = false)
-    private var firstname : String? = null
+    var firstname : String? = null
 
     @Column(nullable = false)
-    private var lastname : String? = null
+    var lastname : String? = null
 
     @Column
-    private var dayOfBirth : String? = null
+    var dayOfBirth : String? = null
 
     @OneToMany
-    private lateinit var recipeEntity: List<RecipeEntity>
+    lateinit var recipeEntity: List<RecipeEntity>
 
     @OneToMany
-    private lateinit var recipeFavorites : List<RecipeEntity>
+    lateinit var recipeFavorites : List<RecipeEntity>
 
     @OneToMany
-    private lateinit var ratings: List<RatingEntity>
+    lateinit var ratings: List<RatingEntity>
 
     @ManyToOne
-    private lateinit var userRoleEntity: UserRoleEntity
+    lateinit var userRoleEntity: UserRoleEntity
 
     @ManyToOne
-    private lateinit var userGroupEntity: UserGroupEntity
+    lateinit var userGroupEntity: UserGroupEntity
 }

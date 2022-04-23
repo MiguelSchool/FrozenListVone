@@ -14,6 +14,7 @@ import java.io.Serializable
 @AllArgsConstructor
 @EqualsAndHashCode
 class AddressDto : Serializable {
+    val id: Long? = null
     var street: String? = null
     var streetNumber: String? = null
     var postcode: String? = null

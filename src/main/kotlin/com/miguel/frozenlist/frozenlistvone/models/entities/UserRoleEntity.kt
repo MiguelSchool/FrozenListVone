@@ -18,10 +18,10 @@ class UserRoleEntity {
     var id: Long? = null
 
     @Column(nullable = false)
-    private var userRole: UserRole? = null
+    var userRole: UserRole? = null
 
     @OneToMany
-    private lateinit var users: Set<UserEntity>
+    lateinit var users: Set<UserEntity>
 
 
 }

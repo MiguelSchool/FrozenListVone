@@ -10,6 +10,7 @@ import java.io.Serializable
 @AllArgsConstructor
 @EqualsAndHashCode
 class RecipeDto : Serializable {
+    val id: Long? = null
     val isPrivateRecipe: Boolean? = null
     val duration: Double? = null
     val name: String? = null

@@ -10,6 +10,7 @@ import java.io.Serializable
 @AllArgsConstructor
 @EqualsAndHashCode
 class StorageTypeEntityDto : Serializable {
+    val id: Long? = null
     val name: String? = null
     val storageEntity: MutableList<StorageDto> = mutableListOf()
 }

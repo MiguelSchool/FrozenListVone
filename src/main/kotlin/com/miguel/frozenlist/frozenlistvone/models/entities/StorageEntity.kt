@@ -19,17 +19,17 @@ class StorageEntity {
     var id: Long? = null
 
     @Column(nullable = false)
-    private var storageName : String? = null
+    var storageName : String? = null
 
     @Column(nullable = true)
-    private var description : String? = null
+    var description : String? = null
 
     @OneToMany
-    private lateinit var productEntity: List<ProductEntity>
+    lateinit var productEntity: List<ProductEntity>
 
     @ManyToOne
-    private lateinit var storageTypeEntity: StorageTypeEntity
+    lateinit var storageTypeEntity: StorageTypeEntity
 
     @ManyToOne
-    private lateinit var userGroupEntity: UserGroupEntity
+    lateinit var userGroupEntity: UserGroupEntity
 }

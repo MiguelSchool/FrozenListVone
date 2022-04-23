@@ -20,6 +20,6 @@ class StorageTypeEntity {
     var storageTypeName: String? = null
 
     @OneToMany
-    private lateinit var storageEntity: List<StorageEntity>
+    lateinit var storageEntity: List<StorageEntity>
 
 }

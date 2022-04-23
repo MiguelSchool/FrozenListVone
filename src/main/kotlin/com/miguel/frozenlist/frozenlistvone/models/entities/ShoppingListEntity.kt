@@ -19,18 +19,18 @@ class ShoppingListEntity {
     var id: Long? = null
 
     @Column(nullable = false)
-    private var createdAt: LocalDate? = null
+    var createdAt: LocalDate? = null
 
     @Column( nullable = false)
-    private var shoppingListName: String? = null
+    var shoppingListName: String? = null
 
     @Column( nullable = false) private var finish: Boolean? = null
-    private var totalPrice: Double? = null
+    var totalPrice: Double? = null
 
     @ManyToMany
-    private lateinit var productEntities : List<ProductEntity>
+    lateinit var productEntities : List<ProductEntity>
 
     @ManyToOne
-    private lateinit var userGroupEntity: UserGroupEntity
+    lateinit var userGroupEntity: UserGroupEntity
 
 }

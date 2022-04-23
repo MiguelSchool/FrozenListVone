@@ -10,7 +10,8 @@ import java.io.Serializable
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode
-class RatingEntityDto : Serializable {
+class RatingDto : Serializable {
+    val id: Long? = null
     val rating: Rating? = null
     val recipeEntities: MutableList<RecipeDto> = mutableListOf()
 }

@@ -32,6 +32,6 @@ class AddressEntity{
     var floor : String? = null
 
     @OneToMany
-    private lateinit var userGroupEntity: List<UserGroupEntity>
+    lateinit var userGroupEntity: List<UserGroupEntity>
 
 }

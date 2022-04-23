@@ -19,20 +19,20 @@ class UserGroupEntity {
     var userGroupName : String? = null
 
     @OneToMany
-    private lateinit var storageEntity: List<StorageEntity>
+    lateinit var storageEntity: List<StorageEntity>
 
     @OneToMany
-    private lateinit var recipes: List<RecipeEntity>
+    lateinit var recipes: List<RecipeEntity>
 
     @OneToMany
-    private lateinit var favoritesRecipes: List<RecipeEntity>
+    lateinit var favoritesRecipes: List<RecipeEntity>
 
     @OneToMany
-    private lateinit var shoppingListEntities: List<ShoppingListEntity>
+    lateinit var shoppingListEntities: List<ShoppingListEntity>
 
     @OneToMany
-    private lateinit var users: Set<UserEntity>
+    lateinit var users: Set<UserEntity>
 
     @ManyToOne
-    public lateinit var address: AddressEntity
+    lateinit var address: AddressEntity
 }

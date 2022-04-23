@@ -10,7 +10,8 @@ import java.time.LocalDate
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode
-class ProductEntityDto : Serializable {
+class ProductDto : Serializable {
+    val id: Long? = null
     val name: String? = null
     val durabilityDays: Int? = null
     val boughtAt: LocalDate? = null

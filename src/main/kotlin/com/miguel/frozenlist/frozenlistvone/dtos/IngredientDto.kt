@@ -9,7 +9,8 @@ import java.io.Serializable
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode
-class IngredientEntityDto: Serializable {
+class IngredientDto: Serializable {
+    val id: Long? = null
     val name: String? = null
     val amount: Double? = null
     val ingredientGroup: String? = null
