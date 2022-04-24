@@ -19,11 +19,11 @@ internal val addressEntityToDto : (AddressEntity) -> AddressDto = { addressEntit
 
 internal val addressDtoToEntity: (AddressDto) -> AddressEntity = { addressDto: AddressDto ->
     val addressEntity = AddressEntity()
-    addressEntity.street = addressDto.street
-    addressEntity.streetNumber = addressDto.streetNumber
-    addressEntity.postcode = addressEntity.postcode
-    addressEntity.city = addressEntity.city
-    addressEntity.floor = addressDto.floor
+    addressEntity.street = addressDto.street ?: ""
+    addressEntity.streetNumber = addressDto.streetNumber ?: ""
+    addressEntity.postcode = addressEntity.postcode ?: ""
+    addressEntity.city = addressEntity.city ?: ""
+    addressEntity.floor = addressDto.floor ?: ""
     addressEntity
 }
 
@@ -31,7 +31,7 @@ private val isValidAddress : (AddressDto) -> Boolean = { addressDto: AddressDto 
     val postCodePatter = AddressValidator.patternPostcode
     val streetPatter = AddressValidator.patternStreet
     val streetNumberPatter = AddressValidator.patternStreetNumber
-    val floorRegexPatter = AddressValidator.patternFloor
+    var isValidFloor = true
 
     var areValidProperties = false
     if (
@@ -43,21 +43,12 @@ private val isValidAddress : (AddressDto) -> Boolean = { addressDto: AddressDto 
         val matcherPostCode: Matcher = postCodePatter.matcher(addressDto.postcode)
         val matcherStreet: Matcher = streetPatter.matcher(addressDto.street)
         val matcherStreetNumber: Matcher = streetNumberPatter.matcher(addressDto.streetNumber)
-
-        areValidProperties = if( addressDto.floor != null && addressDto.floor != "") { //addressDto.floor != null && addressDto.floor != "" TODO: matcher
-//            val floorMatcher : Matcher = floorRegexPatter.matcher(addressDto.floor)
-//
-//            floorMatcher.matches() && addressRegexPropertiesAudit( matcherPostCode,
-//                matcherStreet,
-//                matcherStreetNumber ) &&
-//                    addressDto.postcode!!.length == 5 &&
-//                    addressDto.floor!!.length < 4
-            addressDto.floor == ""
-        } else {
-            addressRegexPropertiesAudit(matcherPostCode, matcherStreet, matcherStreetNumber) &&
-                    addressDto.postcode!!.length == 5 &&
-                    addressDto.floor!!.length < 4
+        if (addressDto.floor != "" && addressDto.floor != null) {
+            isValidFloor = addressDto.floor!!.length < 4 && addressDto.floor!!.isNotEmpty()
         }
+        addressDto.floor = addressDto.floor ?: ""
+        areValidProperties = addressRegexPropertiesAudit(matcherPostCode, matcherStreet, matcherStreetNumber) &&
+                addressDto.postcode!!.length == 5 && isValidFloor
     }
 
     areValidProperties
