@@ -11,6 +11,6 @@ import java.io.Serializable
 @EqualsAndHashCode
 class RatingDto : Serializable {
     val id: Long? = null
-    val rating: Rating? = null
-    val recipeEntities: MutableList<RecipeDto> = mutableListOf()
+    var rating: Rating? = null
+    var recipeDtoList: MutableList<RecipeDto> = mutableListOf()
 }

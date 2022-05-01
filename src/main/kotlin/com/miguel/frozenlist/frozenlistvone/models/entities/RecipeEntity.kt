@@ -17,7 +17,10 @@ class RecipeEntity {
     var id: Long? = null
 
     @Column(nullable = false)
-    var isPrivateRecipe : Boolean? = null
+    var isPrivateRecipe : Boolean = false
+
+    @Column(nullable = false)
+    var isFavorite : Boolean = false
 
     @Column(nullable = false)
     var duration : Double? = null
