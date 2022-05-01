@@ -19,7 +19,7 @@ class UserGroupEntity {
     var userGroupName : String? = null
 
     @OneToMany
-    lateinit var storageEntity: List<StorageEntity>
+    lateinit var storages: List<StorageEntity>
 
     @OneToMany
     lateinit var recipes: List<RecipeEntity>

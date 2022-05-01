@@ -40,9 +40,9 @@ private val isValidAddress : (AddressDto) -> Boolean = { addressDto: AddressDto 
         addressDto.postcode != null && addressDto.postcode != "" &&
         addressDto.city != null && addressDto.city != "" ) {
 
-        val matcherPostCode: Matcher = postCodePatter.matcher(addressDto.postcode)
-        val matcherStreet: Matcher = streetPatter.matcher(addressDto.street)
-        val matcherStreetNumber: Matcher = streetNumberPatter.matcher(addressDto.streetNumber)
+        val matcherPostCode: Matcher = postCodePatter.matcher(addressDto.postcode!!)
+        val matcherStreet: Matcher = streetPatter.matcher(addressDto.street!!)
+        val matcherStreetNumber: Matcher = streetNumberPatter.matcher(addressDto.streetNumber!!)
         if (addressDto.floor != "" && addressDto.floor != null) {
             isValidFloor = addressDto.floor!!.length < 4 && addressDto.floor!!.isNotEmpty()
         }

@@ -4,8 +4,7 @@ import lombok.*
 import java.io.Serializable
 import java.time.LocalDate
 
-@Getter
-@Setter
+
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor

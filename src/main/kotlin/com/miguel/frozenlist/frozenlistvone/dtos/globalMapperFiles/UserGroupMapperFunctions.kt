@@ -2,23 +2,23 @@ package com.miguel.frozenlist.frozenlistvone.dtos.globalMapperFiles
 
 import com.miguel.frozenlist.frozenlistvone.dtos.UserGroupDto
 import com.miguel.frozenlist.frozenlistvone.models.entities.UserGroupEntity
-import org.apache.tomcat.jni.User
 
 
 internal val userGroupDtoToEntity: (UserGroupDto) -> UserGroupEntity = { userGroupDto: UserGroupDto ->
     val userGroupEntity = UserGroupEntity()
     userGroupEntity.userGroupName = userGroupDto.name
-
+    //userGroupEntity.users = userGroupDto.users
     userGroupEntity
 }
 
-internal val userGroupEntityToDto: (UserGroupEntity) -> UserGroupDto = { userGroupEntity: UserGroupEntity ->
+internal val userGroupEntityToDto: (UserGroupEntity) -> UserGroupDto = {
     val userGroupDto = UserGroupDto()
-    userGroupDto.name = userGroupEntity.userGroupName
-    userGroupDto.address =  addressEntityToDto(userGroupEntity.address)
-    userGroupDto.address
+    userGroupDto.name = it.userGroupName
+    userGroupDto.address =  addressEntityToDto(it.address)
+  //  userGroupDto.storages = it.storages
     userGroupDto
 }
+
 
 
 

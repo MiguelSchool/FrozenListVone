@@ -1,5 +1,6 @@
 package com.miguel.frozenlist.frozenlistvone.models.entities
 
+import lombok.EqualsAndHashCode
 import lombok.Getter
 import lombok.NoArgsConstructor
 import lombok.Setter
@@ -9,7 +10,7 @@ import javax.persistence.*
 @Getter
 @Setter
 @NoArgsConstructor
-
+@EqualsAndHashCode
 @Table(name = "Storages")
 class StorageEntity {
 
@@ -25,7 +26,7 @@ class StorageEntity {
     var description : String? = null
 
     @OneToMany
-    lateinit var productEntity: List<ProductEntity>
+    lateinit var productEntityList: List<ProductEntity>
 
     @ManyToOne
     lateinit var storageTypeEntity: StorageTypeEntity
