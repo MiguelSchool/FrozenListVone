@@ -13,12 +13,12 @@ internal val recipeEntityToDto : (RecipeEntity) -> RecipeDto = {
         recipeDto.cookedCount = it.cookedCount ?: 0
         recipeDto.duration = it.duration ?: 0.0
         recipeDto.image = it.image ?: ""
-
+//TODO: MAPPING
     recipeDto
 }
 
 internal  val recipeDtoToEntity : (RecipeDto) -> RecipeEntity = {
     val recipeEntity = RecipeEntity()
-
+    //TODO: MAPPING
     recipeEntity
 }

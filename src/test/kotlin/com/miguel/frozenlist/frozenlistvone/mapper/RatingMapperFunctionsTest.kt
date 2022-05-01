@@ -2,10 +2,12 @@ package com.miguel.frozenlist.frozenlistvone.mapper
 
 import com.miguel.frozenlist.frozenlistvone.dtos.RatingDto
 import com.miguel.frozenlist.frozenlistvone.dtos.RecipeDto
+import com.miguel.frozenlist.frozenlistvone.dtos.globalMapperFiles.ratingDtoToEntity
 import com.miguel.frozenlist.frozenlistvone.models.DifficultLevel
 import com.miguel.frozenlist.frozenlistvone.models.Rating
 import com.miguel.frozenlist.frozenlistvone.models.entities.RatingEntity
 import com.miguel.frozenlist.frozenlistvone.models.entities.RecipeEntity
+import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Assertions.assertNotNull
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.MethodSource
@@ -34,7 +36,8 @@ class RatingMapperFunctionsTest {
         expected.recipeEntities = mockList
         val result = ratingDtoToEntity(ratingDto)
         assertNotNull(result)
-
+        assertEquals(expected.rating, result.rating)
+        //TODO: dto to entity tests
     }
 
     companion object {
@@ -66,10 +69,10 @@ class RatingMapperFunctionsTest {
         fun `valid  RatingEntities`() : List<RatingEntity> {
             val mockOne = RatingEntity()
                 mockOne.rating  = Rating.FOUR
-                mockOne.recipeEntities = getDefaultRecipeEntities()
+                mockOne.recipeEntities = getDefaultRecipeEntities().toMutableList()
             val mockTwo = RatingEntity()
                 mockTwo.rating = Rating.ONE_AND_HALF
-                mockTwo.recipeEntities = getDefaultRecipeEntities()
+                mockTwo.recipeEntities = getDefaultRecipeEntities().toMutableList()
             val mockThree = RatingEntity()
                 mockThree.rating = Rating.FIVE
                 mockThree.recipeEntities = emptyList<RecipeEntity>().toMutableList()

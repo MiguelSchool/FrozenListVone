@@ -22,7 +22,7 @@ class RatingEntity {
     var rating: Rating? = null
 
     @OneToMany
-    lateinit var recipeEntities:List<RecipeEntity>
+    lateinit var recipeEntities:MutableList<RecipeEntity>
 
     @ManyToOne
     var userEntity: UserEntity? = null

@@ -13,4 +13,5 @@ class RatingDto : Serializable {
     val id: Long? = null
     var rating: Rating? = null
     var recipeDtoList: MutableList<RecipeDto> = mutableListOf()
+    var isValid = false
 }
