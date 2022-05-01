@@ -25,9 +25,6 @@ class UserGroupEntity {
     lateinit var recipes: List<RecipeEntity>
 
     @OneToMany
-    lateinit var favoritesRecipes: List<RecipeEntity>
-
-    @OneToMany
     lateinit var shoppingListEntities: List<ShoppingListEntity>
 
     @OneToMany

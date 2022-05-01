@@ -17,4 +17,5 @@ class RecipeDto : Serializable {
     var category: String? = null
     var description: String? = null
     var image: String? = null
+    var isFavorite: Boolean = false
 }

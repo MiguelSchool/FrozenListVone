@@ -15,7 +15,6 @@ class UserGroupDto : Serializable {
     var isValid: Boolean = false
     val storages: MutableList<StorageDto> = mutableListOf()
     val recipes: MutableList<RecipeDto?> = mutableListOf()
-    val favoritesRecipes: MutableList<RecipeDto> = mutableListOf()
     val shoppingListEntities: MutableList<ShoppingListDto?> = mutableListOf()
     val users : MutableList<UserDto> = mutableListOf()
 }
