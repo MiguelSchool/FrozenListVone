@@ -32,6 +32,18 @@ internal val storageDtoToEntity : (StorageDto) -> StorageEntity = {
     storageEntity
 }
 
+internal val storageEntityListToDto : (List<StorageEntity>) -> MutableList<StorageDto> = {
+    val mutableList = mutableListOf<StorageDto>()
+    it.map { entity -> mutableList.add( storageEntityToDto(entity) ) }
+    mutableList
+}
+
+internal val storageDtoListToEntityList : (MutableList<StorageDto>) -> List<StorageEntity> = {
+    val mutableList = mutableListOf<StorageEntity>()
+    it.map { dto -> mutableList.add( storageDtoToEntity(dto))}
+    mutableList.toList()
+}
+
 private val isValidStorageDto : (StorageDto) -> Boolean = {
     if(it.description == null) {
         it.description = ""
